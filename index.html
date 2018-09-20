@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<!-- saved from url=(0061)https://ecigarettesdirect.co.uk/smoking-calculator/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smoking / Vape Calculator</title>
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <link rel="stylesheet" href="css">
+  <link rel="stylesheet" href="ionicons.min.css">
+  <link rel="stylesheet" href="Form-Clean.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="login-clean" style="background-color: #7748f7">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-12">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <h4>Smoking VS Vaping Calculator</h4>
+              <hr>
+              <ul>
+                <li>How much does keeping the habbit of smoking actully end up costing you?</li>
+                <li>How much would you save if you swiched from Smoking to Vaping?</li>
+                <li>If you Quit could you save to purchase other things? Flowers, Movie tickets, Dinner for a night out? A new car or house? Or could you just save that extra cash up over a year?</li>
+                <li>Before we get too excited about all the extra cash you have, lets work out your daily, weekly, monthly, yearly and lifetime savings.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <form method="post" id="smoking_calculator">
+            <h4>Smoking Calculator</h4>
+            <hr>
+
+            <div class="form-group">
+              <label class="control-label">Age</label>
+              <input class="form-control" id="D20" name="D20" data-cell="D20" placeholder="Add in your current age">
+            </div>
+            <div class="form-group">
+              <label class="control-label">Cigarettes consumed per day</label>
+              <input class="form-control" id="D21" name="D21" data-cell="D21" placeholder="On Average how many cigarettes do you smoke per day">
+            </div>
+            <div class="form-group">
+              <label class="control-label">Cost per pack</label>
+              <input class="form-control" id="D22" name="D22" data-cell="D22" data-format="$ 0,0[.]00" placeholder="How much do you spend on a pack of cigarettes?">
+            </div>
+            <div class="form-group">
+              <label class="control-label">Size of Cigrette Pack</label>
+              <input class="form-control" id="D23" name="D23" data-cell="D23" placeholder="What pack size do you buy?">
+            </div>
+
+            <div class="form-group">
+              <button style="background-color: #36e10a" class="btn btn-primary btn-block btn-smoking" type="button" >Process </button>
+            </div>
+
+            <p>
+              <font color="red">Costs of smoking (Based on how much you smoke a day and cost per pack)</font>
+              <br>
+              Summary of what you will spend over the rest of your lifetime
+            </p>
+
+            <ul>
+              <li>Cost Per Day <b id="D29" name="D29" data-cell="D29" data-format="$ 0,0[.]00" data-formula="SUM(D22/D23)*D21"></b></li>
+              <li>Cost Per Week <b id="D30" name="D30" data-cell="D30" data-format="$ 0,0[.]00" data-formula="SUM(D29)*365/52"></b></li>
+              <li>Cost Per Month <b id="D31" name="D31" data-cell="D31" data-format="$ 0,0[.]00" data-formula="SUM(D30)*4"></b></li>
+              <li>Cost Per Year <b id="D32" name="D32" data-cell="D32" data-format="$ 0,0[.]00" data-formula="SUM(D30)*52"></b></li>
+              <li>Lifetime Cost* <b id="D33" name="D33" data-cell="D33" data-format="$ 0,0[.]00" data-formula="SUM(83-D20)*D32"></b></li>
+            </ul>
+            <small>
+            *The amount you will spend on Cigarettes for the rest of your lifetime. Based on the average life expectancy in Australia of 83 years
+            </small>
+            <div style="height: 108px"></div>
+          </form>
+        </div>
+
+        <div class="col-md-6">
+          <form method="post" id="vaping_calculator">
+            <h4>Vaping Calculator</h4>
+            <hr>
+
+            <div class="form-group">
+              <label class="control-label">Age</label>
+              <input class="form-control" id="O20" name="O20" data-cell="O20" placeholder="Add in your current age">
+            </div>
+            <div class="form-group">
+              <label class="control-label">Setup Costs of Vaping</label>
+              <input class="form-control" id="O21" name="O21" data-cell="O21" data-format="$ 0,0[.]00" placeholder="Initial setup costs for Vaping. Eg, Mod, Tank, Coils, Batteries. Etc.">
+            </div>
+            <div class="form-group">
+              <label class="control-label">Ongoing Costs Per Month</label>
+              <input class="form-control" id="O22" name="O22" data-cell="O22" data-format="$ 0,0[.]00" placeholder="E-Liquid and Coil Replacement or any other ongoing monthly costs">
+            </div>
+            <div class="form-group">
+              <label class="control-label">E-Liquid Costs Per Month</label>
+              <input class="form-control" id="O23" name="O23" data-cell="O23" data-format="$ 0,0[.]00" placeholder="Total cost of E-Liquid per Month">
+            </div>
+            <div class="form-group">
+              <label class="control-label" style="color: red">Total  cost in the first month</label>
+              <input class="form-control" id="O24" name="O24" data-cell="O24" data-format="$ 0,0[.]00" data-format="$ 0,0[.]00" data-formula="SUM(O21+O22+O23)" disabled="disabled">
+            </div>
+
+            <div class="form-group">
+              <button style="background-color: #36e10a" class="btn btn-primary btn-block btn-vaping" type="button">Process </button>
+            </div>
+
+            <p>
+              <font color="red">Costs of Vaping (Based on ongoing costs per month and E-Liquid costs per month)</font>
+              <br>
+              Summary of what you will spend over the rest of your lifetime
+            </p>
+
+            <ul>
+              <li>Cost Per Day <b id="O29" name="O29" data-cell="O29" data-format="$ 0,0[.]00" data-formula="SUM(O24-O21)*12/365"></b></li>
+              <li>Cost Per Week <b id="O30" name="O30" data-cell="O30" data-format="$ 0,0[.]00" data-formula="SUM(O29)*7"></b></li>
+              <li>Cost Per Month <b id="O31" name="O31" data-cell="O31" data-format="$ 0,0[.]00" data-formula="SUM(O30)*4"></b></li>
+              <li>Cost Per Year <b id="O32" name="O32" data-cell="O32" data-format="$ 0,0[.]00" data-formula="SUM(O31)*12"></b></li>
+              <li>Lifetime Cost* <b id="O33" name="O33" data-cell="O33" data-format="$ 0,0[.]00" data-formula="SUM(83-(O20))*(O32)"></b></li>
+            </ul>
+            <small>
+            *The amount you will spend on Cigarettes for the rest of your lifetime. Based on the average life expectancy in Australia of 83 years
+            </small>
+
+          </form>
+        </div>
+
+        <div class="col-md-12">
+          <div class="panel panel-default" style="margin-top: 23px">
+            <div class="panel-body">
+              <h4>If you switch to Vaping from Smoking You Will Save</h4>
+              <hr>
+              <ul id="comparation_calculator">
+                <li><b id="F37" name="F37" data-cell="F37" data-format="$ 0,0[.]00" data-formula="SUM(D29-O29)"></b> In One Day</li>
+                <li><b id="F38" name="F38" data-cell="F38" data-format="$ 0,0[.]00" data-formula="SUM(D30-O30)"></b> In One Week</li>
+                <li><b id="F39" name="F39" data-cell="F39" data-format="$ 0,0[.]00" data-formula="SUM(D31-O31)"></b> In One Month</li>
+                <li><b id="F40" name="F40" data-cell="F40" data-format="$ 0,0[.]00" data-formula="SUM(D32-O32)"></b> In One Year</li>
+                <li><b id="F41" name="F41" data-cell="F41" data-format="$ 0,0[.]00" data-formula="SUM(D33-O33)"></b> In Your Lifetime</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <script src="jquery.min.js"></script>
+  <script src="bootstrap.min.js"></script>
+  <script type="text/javascript" src="numeral.min.js"></script>
+  <script type="text/javascript" src="jquery-calx-2.1.1.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $('body').calx()
+    })
+  </script>
+</body></html>
